@@ -5,7 +5,6 @@ from django.db import models
 
 
 class Persons(models.Model):
-    _id = models.AutoField(primary_key=True)
     index = models.IntegerField()
     name = models.TextField(max_length=100)
     gender = models.TextField(max_length=30)

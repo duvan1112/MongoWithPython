@@ -1,0 +1,150 @@
+INTRODUCCIÓN:
+
+El presente documento busca mostrar las bases de un proyecto el cual consiste de un sistema de comunicación simple, el cual será trabajado aplicando los conceptos aprendidos en la asignatura de transmisión de datos, el cual será idealizado, desarrollado e implementado a manera de un prototipo funcional.
+
+Para este proyecto, se busca proponer, un enfoque dirigido hacia las combinaciones de patrones visuales, la cual nos permitirá simular nuestra comunicación simple, permitiendo el envío y recepción de mensajes entre dispositivos mecánicos/manuales ubicados a corta distancia y a una gran altura para una mejor visualización.
+
+De esta forma, permitiendo mostrar que tanto el emisor como el receptor tendrán la posibilidad de comunicarse de una manera más sintetizada y ágil. Sin embargo, esto siempre recordando que ambas partes deberán realizar la traducción de las distintas combinaciones generadas para entender la coherencia del mensaje en donde cada uno tiene el tiempo necesario para realizar dicho proceso y así generar una “conversación” un poco más fluida y además que sea segura sin que se presenten contratiempos.
+
+DEFINICIÓN DEL SISTEMA DE COMUNICACIONES 
+
+COMPONENTES:
+
+6 leds 
+6 pulsadores
+Un tramo de cable UTP de la misma longitud (La longitud va ligada a la distancia de comunicación que se desee) 
+Dos portapilas dobles
+
+ALCANCE O DISTANCIA:
+
+En nuestro proyecto, la distancia entre receptor y emisor va estar directamente relacionada con el tramo de cable que se va a usar, para nuestro caso, será de aproximadamente 6 metros, pero si se desea disminuir o aumentar la distancia simplemente se debe reemplazar el cable.
+
+¿CÓMO FUNCIONA?
+
+El telégrafo que realizamos consta de 3 pulsadores y tres led en cada estación (emisor y receptor), para el envío de un mensaje se usará el código morse internacional, este incluye letras, vocales, números y algunos caracteres especiales. Entonces, uno de los leds de la estación simboliza un punto, otro de los leds representa una línea y el led final tiene como significado la terminación del envío de un carácter.
+Para establecer la sesión, se estableció que, al igual que una llamada telefónica, debe hacer una señal de petición, para nuestro caso, esta señal se verá reflejada cuando los led 1 y 2 (punto y línea) se enciendan en la estación receptora del mensaje. Y la respuesta a esta solicitud (aceptar la petición), se dará cuando el receptor presione los pulsadores 1 y 2, los cuales encenderán los leds 1 y 2 (punto y línea) al mismo tiempo en la estación del emisor, cuando esto suceda los dos leds de cada estación se apagan y la sesión queda establecida y lista para iniciar con la emision y recepcion del mensaje. 
+Al enviar un mensaje en código morse se debe tener en cuenta que este se compone únicamente de dos símbolos, los cuales son un punto y una línea, pero en nuestro proyecto, estos símbolos están representados con dos leds de diferentes colores.
+
+PREGUNTA INICIAL?
+
+¿Qué dificultad existiría al desarrollar un sistema de comunicaciones simple bajo un protocolo recién creado?
+
+¿QUÉ SABEMOS?
+
+Se tiene conocimiento de cuáles son los componentes o materiales necesarios para desarrollar el proyecto
+Sabemos la manera en que se va a enviar el mensaje que el emisor envía al receptor
+Sabemos la manera en que se va a recibir el mensaje que el emisor envía al receptor
+Se conoce el modelo de un sistema de telecomunicaciones básico o simple
+Se tiene conocimiento de que consiste un protocolo y sus mecanismos de control
+
+PRODUCTO A DESARROLLAR
+
+Telégrafo casero, hecho con materiales de bajo costo y fáciles de conseguir. Con la pequeña modificación que en lugar de usar un “timbre” para representar la línea y el punto del código morse convencional, decidimos usar leds que cumplen la misma función que el timbre 
+
+¿QUÉ HAY QUE SABER?
+
+Para realizar el proyecto se deben saber las siguientes cosas:
+Conocimientos básicos de conexión de circuitos electrónicos
+Modelo básico de un sistema de telecomunicaciones
+Código morse para el entendimiento de los mensajes 
+
+DEFINICIÓN DE TAREAS Y TIEMPOS
+
+Planeación del proyecto: Definición del telégrafo y sus componentes, costos, definición del tiempo (semana 1 - hasta 15 de Julio)
+Desarrollo del informe del proyecto: Presentación formal de los aspectos del proyecto (semana 2 - hasta 22 de julio)
+Desarrollo del telégrafo: Implementación y realización de las respectivas pruebas (semana 3 y 4 - hasta 5 de agosto)
+
+ENFOQUE
+El siguiente protocolo está enfocado a la comunicación con caracteres estándar.
+
+DISEÑO DEL PROTOTIPO
+
+Para el diseño del prototipo de telégrafo casero, se realizó el siguiente diseño de circuito eléctrico en el cual los distintos leds e interruptores se encuentran conectados en serie a las dos fuentes de voltaje que en nuestro caso son baterías, este tipo de circuito eléctrico se desarrolló con el fin de aprovechar los ocho cables del cable UTP y así utilizar solo un cable para la comunicación entre los dos nodos. 
+
+
+
+CODIFICACIÓN:
+Para la comunicación entre el emisor y receptor partimos del código morse internacional, el cual representa los distintos caracteres, números y símbolos por medio de puntos y líneas:
+
+Para el diseño de este telégrafo tenemos que un punto se representa por un color de led y una línea se representa por un color distinto al anterior; Para el envío de un mensaje el emisor oprime un pulsador que permite el paso de la corriente por medio del cable, la cual llega al led correspondiente al tipo de instrucción oprimida en el extremo del receptor(dicha instrucción puede ser el punto, espacio o cambio de carácter), como el led se trata de un diodo de unión p-n, que emite luz cuando está activado. Si se aplica una tensión adecuada a los terminales, los electrones se recombinan con los huecos en la región de la unión p-n del dispositivo, liberando energía en forma de fotones. 
+
+Finalmente, la luz es percibida por el receptor que es una persona, la cuál escribe el mensaje del emisor teniendo en cuenta la secuencia en la que se encienden los leds para así poder decodificar este mensaje de puntos y líneas a letras, números o símbolos mostrados en la imagen anterior.
+
+MODULACIÓN: 
+
+El sistema simple de comunicaciones presenta una modulacion analoga de frecuencia, ya que el telégrafo envía pulsos electrónicos desde el emisor cada cierto tiempo (frecuencia), con los cuales se encienden unos led en la estación del receptor, y estos pulsos se pueden ver como una onda sinusoidal de la siguiente manera: 
+
+En donde la frecuencia hace referencia al tiempo que transcurre entre el momento en que se oprime el botón que envía el mensaje y el momento en el que se vuelve a oprimir. De la misma manera, esta operación se repite tanto enviando mensajes desde la estación 1 a la estación 2, como asimismo de manera contraria.
+
+CAPACIDAD DE TRANSMISIÓN: 
+
+El sistema de comunicaciones que desarrollamos a simple vista podría considerarse como un sistema full duplex, debido a que este se caracteriza por poder enviar y recibir mensajes desde y hacia una estación al mismo tiempo, lo que haría posible una comunicación mas fluida, pero en este caso, considerando que en el fondo es un telégrafo tradicional, es mucho mejor usarlo de una manera Half duplex, ya que es mucho más sencillo y práctico poder leer o entender el mensaje que está siendo recepcionado en una estación y una vez terminado este, enviar un mensaje como respuesta, y no estar enviando la respuesta al mismo tiempo que se está recibiendo el mensaje, esto complicaría la transmisión y el entendimiento de los mensajes.
+
+METODOS DE TRANSMISION :
+
+El sistema de comunicaciones simples que desarrollamos tiene un método de transmisión en paralelo, debido a que se utilizan 3 hilos o canales para el envío y la recepción de diferente información, poniendo un ejemplo, al querer enviar la letra A, si vemos el código Morse Internacional, estaría representada por ‘.-’, es decir que en un canal se envían los símbolos de ‘punto’, en otro canal se envían los símbolos ‘-’ y el último canal está destinado para señalar la finalización de la transmisión del carácter. Por otro lado, esta transmisión se realiza de manera síncrona, es decir que las dos estaciones deben establecer una SESIÓN para empezar con la transmisión del mensaje, esta sesión se establece de la siguiente manera:
+
+Al igual que una llamada telefónica, el usuario o estación que desee iniciar la sesión debe hacer una solicitud de conexión con la otra estación, esta solicitud se realiza manteniendo presionado los pulsadores o botones de ‘punto’ y ‘línea’ al mismo tiempo, con lo cual los dos leds se encenderán en la estación receptora al mismo tiempo.
+Para poder aceptar la solicitud de transmisión, el receptor debe presionar los mismo pulsadores o botones de la misma manera (mantener presionado ‘punto’ y ‘línea’ al mismo tiempo)
+Cuando esto suceda se da por entendido que la sesión se estableció y se puede empezar con la transmisión del mensaje.
+Para terminar la sesión, el emisor o solicitante de terminación debe (al igual que en el primer paso) mantener presionados los botones de ‘punto’ y ‘línea’ con lo cual se entenderá que desea finalizar la sesión.
+
+PROTOCOLO
+
+Se define como las reglas para la transmisión de la información entre dos puntos, el protocolo usado en nuestro sistema de comunicación consta de las siguientes partes:
+Conjunto de caracteres
+
+Caracteres imprimibles
+Nuestros caracteres imprimibles son los siguientes:
+
+Caracteres de control: Para el caso de los caracteres de control se usa un tercer led con luz distinta al de los usados para representar las líneas y puntos, el cual puede indicar distintas instrucciones de control en la comunicación.
+
+Conjunto de reglas para la secuencia y sincronización de los mensajes:
+
+Para iniciar la comunicación el emisor deberá oprimir el interruptor que encenderá el interruptor amarillo del receptor, para indicar que desea enviar un mensaje. Posteriormente el receptor deberá oprimir el interruptor que encenderá el led del emisor para así comunicarle que está listo para recibir el mensaje.
+
+Al momento de enviar el mensaje el emisor deberá oprimir los pulsadores para puntos y letras, para indicar el cambio de carácter debe oprimir el pulsador de control, así hasta llegar al final del mensaje, Cuando el emisor termine de enviar el mensaje deberá mantener oprimido el pulsador de control para indicar el fin al receptor, finalmente el receptor mantiene oprimido su interruptor de control para indicar el fin de la comunicación.
+
+En cuanto al tiempo en que debe pasar entre cada pulsación se estableció un tiempo entre uno y dos segundos para que las distintas  partes puedan reaccionar a las instrucciones indicadas.
+
+Corrección de errores:
+
+Si el emisor se ha equivocado en el último carácter enviado mantiene oprimido los interruptores de punto y control, lo cual le indicará al receptor que volverá a enviar el mensaje. el receptor oprime su interruptor de control para indicar al receptor que volverá a escribir el último carácter.
+En el caso en que el receptor desee que se repita el último carácter, oprime el interruptor de punto y el de control, con lo cual el emisor oprime su interruptor de control para indicar que lo repetirá.
+
+En el caso en que se desee volver a escribir todo el mensaje el emisor oprime los interruptores de línea y control, con lo cual el receptor oprima el de control para indicar que volverá a recibir desde el inicio el mensaje.
+
+Si se desea cancelar un mensaje, el emisor oprime los tres pulsadores al tiempo, con lo cual el receptor oprime su pulsador de control para indicar que recibió la instrucción.
+
+Protocolo
+
+Aplicación
+
+Presentación
+En esta capa se realiza el proceso de “traducción”, en el cual se toman los “bits”, representados con cada led del sistema de comunicación simple, a puntos y rayas que representan un carácter del código morse.
+
+Sesión
+Para iniciar la comunicación el emisor deberá oprimir el interruptor que encenderá el interruptor amarillo del receptor, para indicar que desea enviar un mensaje. Posteriormente el receptor deberá oprimir el interruptor que encenderá el led del emisor para así comunicarle que está listo para recibir el mensaje, finalmente el receptor mantiene oprimido su interruptor de control para indicar el fin de la comunicación.
+
+Cada integrante del sistema de comunicaciones tendrá un número, después de abrir  la sesión existirán tres mensajes donde el primero corresponde al número del origen (este número lo recibirá por código morse), el segundo al número del destino y el tercero ya es el mensaje que se va a enviar.
+
+Capa de transporte
+
+En la siguiente capa especificamos el ancho de la ventana y corrección de errores. El tamaño de la ventana se va a manejar con un dependiendo el carácter que se envíe, cuando se envía el carácter completo el receptor envía un ack.
+
+Control de errores:
+
+Si el emisor se ha equivocado en el último carácter enviado mantiene oprimido los interruptores de punto y control, lo cual le indicará al receptor que volverá a enviar el mensaje. el receptor oprime su interruptor de control para indicar al receptor que volverá a escribir el último carácter.
+En el caso en que el receptor desee que se repita el último carácter, oprime el interruptor de punto y el de control, con lo cual el emisor oprime su interruptor de control para indicar que lo repetirá.
+
+En el caso en que se desee volver a escribir todo el mensaje el emisor oprime los interruptores de línea y control, con lo cual el receptor oprima el de control para indicar que volverá a recibir desde el inicio el mensaje.
+
+Si se desea cancelar un mensaje, el emisor oprime los tres pulsadores al tiempo, con lo cual el receptor oprime su pulsador de control para indicar que recibió la instrucción
+
+Se tendrá un tiempo de 20 segundos desde que se termina de enviar las pulsaciones que constituyen el carácter donde pasado ese tiempo se vuelve a enviar todo el carácter.
+
+Tiempo empleado por pulsación y acuse de recibo:
+
+En cuanto al tiempo en que debe pasar entre cada pulsación se estableció un tiempo entre uno y dos segundos para que las distintas partes puedan reaccionar a las instrucciones indicadas.
+
+Al momento de enviar el mensaje el emisor deberá oprimir los pulsadores para puntos y letras, para indicar el cambio de carácter debe oprimir el pulsador de control, así hasta llegar al final del mensaje, Cuando el emisor termine de enviar el mensaje deberá mantener oprimido el pulsador de control para indicar el fin al receptor, finalmente el receptor mantiene oprimido su interruptor de control para indicar el fin de la comunicación.
